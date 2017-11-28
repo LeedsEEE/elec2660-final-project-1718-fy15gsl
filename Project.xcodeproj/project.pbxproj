@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E1357C371FC44F0200A4A027 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1357C361FC44F0200A4A027 /* main.m */; };
 		E1357C3A1FC44F0200A4A027 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1357C391FC44F0200A4A027 /* AppDelegate.m */; };
-		E1357C3D1FC44F0200A4A027 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1357C3C1FC44F0200A4A027 /* ViewController.m */; };
+		E1357C3D1FC44F0200A4A027 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1357C3C1FC44F0200A4A027 /* HomeViewController.m */; };
 		E1357C401FC44F0200A4A027 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1357C3E1FC44F0200A4A027 /* Main.storyboard */; };
 		E1357C421FC44F0200A4A027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1357C411FC44F0200A4A027 /* Assets.xcassets */; };
 		E1357C451FC44F0200A4A027 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1357C431FC44F0200A4A027 /* LaunchScreen.storyboard */; };
@@ -39,8 +39,8 @@
 		E1357C361FC44F0200A4A027 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1357C381FC44F0200A4A027 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E1357C391FC44F0200A4A027 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E1357C3B1FC44F0200A4A027 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E1357C3C1FC44F0200A4A027 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1357C3B1FC44F0200A4A027 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E1357C3C1FC44F0200A4A027 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		E1357C3F1FC44F0200A4A027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1357C411FC44F0200A4A027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1357C441FC44F0200A4A027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 			children = (
 				E1357C381FC44F0200A4A027 /* AppDelegate.h */,
 				E1357C391FC44F0200A4A027 /* AppDelegate.m */,
-				E1357C3B1FC44F0200A4A027 /* ViewController.h */,
-				E1357C3C1FC44F0200A4A027 /* ViewController.m */,
+				E1357C3B1FC44F0200A4A027 /* HomeViewController.h */,
+				E1357C3C1FC44F0200A4A027 /* HomeViewController.m */,
 				E1357C3E1FC44F0200A4A027 /* Main.storyboard */,
 				E1357C411FC44F0200A4A027 /* Assets.xcassets */,
 				E1357C431FC44F0200A4A027 /* LaunchScreen.storyboard */,
@@ -273,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1357C3D1FC44F0200A4A027 /* ViewController.m in Sources */,
+				E1357C3D1FC44F0200A4A027 /* HomeViewController.m in Sources */,
 				E1357C3A1FC44F0200A4A027 /* AppDelegate.m in Sources */,
 				E1357C371FC44F0200A4A027 /* main.m in Sources */,
 			);
@@ -507,6 +507,7 @@
 				E1357C611FC44F0200A4A027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1357C621FC44F0200A4A027 /* Build configuration list for PBXNativeTarget "ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				E1357C641FC44F0200A4A027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1357C651FC44F0200A4A027 /* Build configuration list for PBXNativeTarget "ProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +525,7 @@
 				E1357C671FC44F0200A4A027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
