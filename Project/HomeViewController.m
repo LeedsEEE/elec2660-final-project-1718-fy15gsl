@@ -47,13 +47,17 @@
             forComponent:(NSInteger)component{
         /*NSString *number = [NSString stringWithFormat: @"%ld", row];*/
     if (pickerView.tag == 1){ //labels for protein picker
-        return @"1";
+        NSString *label = [self.data.meatOptionsArray objectAtIndex:row];
+        return label;
     }else if (pickerView.tag ==2){ // labels for carbs picker
-        return @"2";
+        NSString *label = [self.data.carbOptionsArray objectAtIndex:row];
+        return label;
     }else if (pickerView.tag == 3){ // labels for veg and fruit picker
-        return @"3";
+        NSString *label = [self.data.vegfruitOptionsArray objectAtIndex:row];
+        return label;
     }else{                          // labels for dairy picker
-        return @"4";
+        NSString *label = [self.data.dairyOptionsArray objectAtIndex:row];
+        return label;
     }
     
 }
