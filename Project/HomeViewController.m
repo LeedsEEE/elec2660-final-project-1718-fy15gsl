@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.data = [[DataModel alloc] init];
+    
     self.proteinPicker.delegate = self;
     self.proteinPicker.dataSource = self;
     
@@ -67,14 +69,22 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    NSInteger numRowsP;
+    NSInteger numRowsC;
+    NSInteger numRowsV;
+    NSInteger numRowsD;
     if (pickerView.tag == 1){ //rows in protein picker
-        return 10;
+        numRowsP = self.data.meatOptionsArray.count;
+        return numRowsP;
     }else if (pickerView.tag == 2){ //rows in carbs picker
-        return 9;
+        numRowsC = self.data.carbOptionsArray.count;
+        return numRowsC;
     }else if (pickerView.tag == 3){ //rows in veg and fruit picker
-        return 12;
+        numRowsV = self.data.vegfruitOptionsArray.count;
+        return numRowsV;
     }else{                         // rows in dairy picker
-        return 5;
+        numRowsD = self.data.dairyOptionsArray.count;
+        return numRowsD;
     }
     
 }

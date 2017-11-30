@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataModel.h"
 
 @interface HomeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -14,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *carbPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *vegPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *dairyPicker;
+
+@property (strong, nonatomic) DataModel *data;
 
 
 - (IBAction)goButton:(UIButton *)sender;
