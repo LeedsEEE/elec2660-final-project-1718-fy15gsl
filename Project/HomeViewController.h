@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataModel.h"
+#import "Suggestions.h"
 
 @interface HomeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *dairyPicker;
 
 @property (strong, nonatomic) DataModel *data;
+@property (strong, nonatomic) Suggestions *suggestions;
 
 
 - (IBAction)goButton:(UIButton *)sender;

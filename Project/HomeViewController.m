@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.data = [[DataModel alloc] init];
+    self.suggestions = [[Suggestions alloc] init];
+    
+    NSLog(@" mealsScoresArray = %@", self.suggestions.mealsScores); // to check the values inside the array and that the class works
     
     self.proteinPicker.delegate = self;
     self.proteinPicker.dataSource = self;
@@ -66,7 +69,21 @@
 - (void)pickerView:(UIPickerView *)pickerView
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
+    NSInteger selectedProteinRow = [self.proteinPicker selectedRowInComponent:0];
+    self.suggestions.selectedProtein = [self.data.meatOptionsArray objectAtIndex:selectedProteinRow];
+    NSLog(@"protein selection: %@", self.suggestions.selectedProtein); // to check that the correct selection is stored in the variable
     
+    NSInteger selectedCarbRow = [self.carbPicker selectedRowInComponent:0];
+    self.suggestions.selectedCarbohydrate = [self.data.carbOptionsArray objectAtIndex:selectedCarbRow];
+    NSLog(@"carb selection: %@", self.suggestions.selectedCarbohydrate);
+    
+    NSInteger selectedVegRow = [self.vegPicker selectedRowInComponent:0];
+    self.suggestions.selectedVegFruit = [self.data.vegfruitOptionsArray objectAtIndex:selectedVegRow];
+    NSLog(@"veg and fruit selection: %@", self.suggestions.selectedVegFruit);
+    
+    NSInteger selectedDairyRow = [self.dairyPicker selectedRowInComponent:0];
+    self.suggestions.selectedDairy = [self.data.dairyOptionsArray objectAtIndex:selectedDairyRow];
+    NSLog(@"dairy selection: %@", self.suggestions.selectedDairy);
 }
 #pragma mark Pricker View Data Source Methods
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
