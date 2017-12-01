@@ -65,7 +65,7 @@
         [self.dairyOptionsArray addObject: @"Soured Cream"];
         [self.dairyOptionsArray addObject: @"none"];     //index 6
         
-        #pragma mark all data for meals
+#pragma mark all data for meals
         self.mealsArray = [NSMutableArray array];
         Module *meal1 = [[Module alloc] init];
         meal1.title = @"Thai fried prawn & pineapple rice";
@@ -284,20 +284,64 @@
         meal22.ingredients = @"2 tbsp olive oil\n 1 large onion\n 2 garlic cloves\n 500g minced beef\n 400g can chopped plum tomatoes\n 2 tbsp tomato purée\n 2 tsp ground cinnamon\n 200g jar chargrilled aubergines\n 200g pack feta cheese (or similar)\n 3 tbsp fresh mint";
         meal22.instructions = @"1. Brown the mince: Heat the oil in a large, shallow pan. Toss in the onion and garlic and fry until soft. Add the mince and stir fry for 3-4 minutes until browned.\n 2. Season and simmer: Tip the tomatoes into the pan and stir in the tomato purée and cinnamon, then season generously with salt and pepper. Leave the mince to simmer for 20 minutes, adding the aubergines half way through.\n 3. To serve: Sprinkle the crumbled feta and chopped mint over the mince. Bring the moussaka to the table as the feta melts and serve it with a crunchy green salad and toasted pitta.";
 
+        self.mealsArray = [NSMutableArray array];
+        Module *meal23 = [[Module alloc] init];
+        meal23.title = @"Lemon drizzle cake";
+        meal23.protein = @"Eggs";
+        meal23.carbohydrate = @"Flour";
+        meal23.vegfruit = @"Lemons";
+        meal23.dairy = @"Butter";
+        meal23.ingredients = @"225g unsalted butter\n 225g caster sugar\n 4 eggs\n 1 lemon\n 225g self-raising flour\n For the drizzle topping:\n juice 1½ lemons\n 85g caster sugar";
+        meal23.instructions = @"1. Heat oven to 180C/fan 160C/gas 4. Beat together 225g softened unsalted butter and 225g caster sugar until pale and creamy, then add 4 eggs, one at a time, slowly mixing through. Sift in 225g flour, then add the finely grated zest of 1 lemon and mix until well combined. Line a loaf tin (8 x 21cm) with greaseproof paper, then spoon in the mixture and level the top with a spoon.\n 2. Bake for 45-50 mins until a thin skewerinserted into the centre of the cake comes out clean. While the cake is cooling in its tin, mix together the juice of 1 1/2 lemons and 85g caster sugar to make the drizzle. Prick the warm cake all over with a skewer or fork, then pour over the drizzle – the juice will sink in and the sugar will form a lovely, crisp topping. Leave in the tin until completely cool, then remove and serve. Will keep in an airtight container for 3-4 days, or freeze for up to 1 month.";
+        
+        self.mealsArray = [NSMutableArray array];
+        Module *meal24 = [[Module alloc] init];
+        meal24.title = @"Summer traybake chicken";
+        meal24.protein = @"Chicken";
+        meal24.carbohydrate = @"none";
+        meal24.vegfruit = @"Tomatoes";
+        meal24.dairy = @"none";
+        meal24.ingredients = @"4 chicken breasts\n 1 tbsp olive oil\n 250g cherry tomatoes\n 4 tbsp pesto";
+        meal24.instructions = @"1. Put the chicken breasts in a large, shallow roasting tray and drizzle with olive oil. Grill for 10 mins, then add cherry tomatoes and grill for another 5 mins until chicken is cooked. Drizzle pesto over the top and serve.";
+        
+        self.mealsArray = [NSMutableArray array];
+        Module *meal25 = [[Module alloc] init];
+        meal25.title = @"Mary's paprika pork in a pot";
+        meal25.protein = @"Pork";
+        meal25.carbohydrate = @"none";
+        meal25.vegfruit = @"Onions";
+        meal25.dairy = @"Cream";
+        meal25.ingredients = @"3 onions\n 600g pork fillet\n 2 tbsp paprika\n 300ml chicken or vegetable stock\n 100ml crème fraîche (or single cream)";
+        meal25.instructions = @"1. Heat 2 tbsp oil in a pan add the onions and fry for 10-15 minutes, stirring occasionally until softened and lightly coloured.\n 2. Cut the pork into sizeable chunks, then add to the pan and stir over a fairly high heat to seal and brown them all over. Stir in the paprika, cook briefly, then add the stock and bring to the boil.\n 3. Cover and cook for 30-35 minutes, until the pork is tender. Stir in the crème fraîche and simmer for a further 2 minutes. (You can prepare the dish to this point up to 2 days ahead or freeze for up to 3 months.) If you have a few chives or a bit of parsley handy, snip this over the pork before serving with rice and a green vegetable – broccoli or stir-fried cabbage make the perfect accompaniment to this simple but delicious dish.";
 
 
+#pragma mark index assignation of mealsArray objects
 
-
-
-
-
-
-
-
-
-
-
-                               
+        [self.mealsArray addObject:meal1]; // index 0
+        [self.mealsArray addObject:meal2];
+        [self.mealsArray addObject:meal3];
+        [self.mealsArray addObject:meal4];
+        [self.mealsArray addObject:meal5];
+        [self.mealsArray addObject:meal6];
+        [self.mealsArray addObject:meal7];
+        [self.mealsArray addObject:meal8];
+        [self.mealsArray addObject:meal9];  // index 10
+        [self.mealsArray addObject:meal10];
+        [self.mealsArray addObject:meal11];
+        [self.mealsArray addObject:meal12];
+        [self.mealsArray addObject:meal13];
+        [self.mealsArray addObject:meal14];
+        [self.mealsArray addObject:meal15];
+        [self.mealsArray addObject:meal16];
+        [self.mealsArray addObject:meal17];
+        [self.mealsArray addObject:meal18];
+        [self.mealsArray addObject:meal19]; // index 20
+        [self.mealsArray addObject:meal20];
+        [self.mealsArray addObject:meal21];
+        [self.mealsArray addObject:meal22];
+        [self.mealsArray addObject:meal23];
+        [self.mealsArray addObject:meal24];
+        [self.mealsArray addObject:meal25]; // index 24
                                
         }
     return self;
