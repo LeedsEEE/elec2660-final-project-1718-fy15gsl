@@ -26,5 +26,6 @@
 @property (strong, nonatomic) DataModel *data;
 
 - (NSMutableArray*) getSuggestions;
+- (void) assignScore;
 
 @end

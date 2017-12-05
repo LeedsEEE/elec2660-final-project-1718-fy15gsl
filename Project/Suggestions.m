@@ -98,8 +98,12 @@
         
         [self.mealsScores replaceObjectAtIndex:i withObject: @(mealScore)];
     }
-    
+    [self assignScore];
     return self.mealsScores;
+}
+
+- (void) assignScore {
+    
 }
 
 @end
