@@ -12,10 +12,10 @@
 
 @interface Suggestions : NSObject
 
-@property NSString *selectedProtein;
-@property NSString *selectedCarbohydrate;
-@property NSString *selectedVegFruit;
-@property NSString *selectedDairy;
+@property NSInteger selectedProtein;
+@property NSInteger selectedCarbohydrate;
+@property NSInteger selectedVegFruit;
+@property NSInteger selectedDairy;
 
 @property NSObject *suggestion1;  // personal note: could use arrays as alternative
 @property NSObject *suggestion2;
@@ -23,5 +23,8 @@
 
 @property (strong, nonatomic) NSMutableArray *mealsScores;
 
+@property (strong, nonatomic) DataModel *data;
+
+- (NSMutableArray*) getSuggestions;
 
 @end

@@ -43,7 +43,8 @@
 
 
 - (IBAction)goButton:(UIButton *)sender {
-    
+    [self.suggestions getSuggestions];
+    NSLog(@"Array= %@", self.suggestions.mealsScores);
 }
 #pragma mark Picker View Delegate Methods
 - (NSString *)pickerView:(UIPickerView *)pickerView
@@ -70,20 +71,30 @@
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
     NSInteger selectedProteinRow = [self.proteinPicker selectedRowInComponent:0];
-    self.suggestions.selectedProtein = [self.data.meatOptionsArray objectAtIndex:selectedProteinRow];
-    NSLog(@"protein selection: %@", self.suggestions.selectedProtein); // to check that the correct selection is stored in the variable
+    self.suggestions.selectedProtein = selectedProteinRow +1;
+    NSLog(@"protein selection: %@", [self.data.meatOptionsArray objectAtIndex:selectedProteinRow]); // to check that the correct selection is stored in the variable
     
-    NSInteger selectedCarbRow = [self.carbPicker selectedRowInComponent:0];
-    self.suggestions.selectedCarbohydrate = [self.data.carbOptionsArray objectAtIndex:selectedCarbRow];
-    NSLog(@"carb selection: %@", self.suggestions.selectedCarbohydrate);
     
-    NSInteger selectedVegRow = [self.vegPicker selectedRowInComponent:0];
-    self.suggestions.selectedVegFruit = [self.data.vegfruitOptionsArray objectAtIndex:selectedVegRow];
-    NSLog(@"veg and fruit selection: %@", self.suggestions.selectedVegFruit);
+    NSInteger selectedCarbRow = [self.carbPicker selectedRowInComponent:0]; // to set the carb selection
+    self.suggestions.selectedCarbohydrate = selectedCarbRow +1;
+    NSLog(@"carb selection: %@", [self.data.carbOptionsArray objectAtIndex:selectedCarbRow]);
+    NSLog(@"carb num: %ld", self.suggestions.selectedCarbohydrate);
     
-    NSInteger selectedDairyRow = [self.dairyPicker selectedRowInComponent:0];
-    self.suggestions.selectedDairy = [self.data.dairyOptionsArray objectAtIndex:selectedDairyRow];
-    NSLog(@"dairy selection: %@", self.suggestions.selectedDairy);
+    
+    NSInteger selectedVegRow = [self.vegPicker selectedRowInComponent:0]; //sets the Veg selection
+    self.suggestions.selectedVegFruit = selectedVegRow +1;
+    NSLog(@"veg and fruit selection: %@", [self.data.vegfruitOptionsArray objectAtIndex:selectedVegRow]);
+    NSLog(@"veg num: %ld", self.suggestions.selectedVegFruit);
+    
+    
+    NSInteger selectedDairyRow = [self.dairyPicker selectedRowInComponent:0]; //sets the dairy selection
+    self.suggestions.selectedDairy = selectedDairyRow +1;
+    NSLog(@"dairy selection: %@", [self.data.dairyOptionsArray objectAtIndex:selectedDairyRow]);
+    NSLog(@"dairy num: %ld", self.suggestions.selectedDairy);
+    
+    NSLog(@" mealsScoresArray = %@", self.suggestions.mealsScores);
+    
+    
 }
 #pragma mark Pricker View Data Source Methods
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -110,4 +121,8 @@
     }
     
 }
+/*- (void) getSuggestions:(NSInteger*)buffer range:(NSRange)inRange {
+    
+}*/
+
 @end

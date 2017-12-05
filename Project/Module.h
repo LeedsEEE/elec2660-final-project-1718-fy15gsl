@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Module : NSObject
 
-//@property (strong, nonatomic) NSADDIMAGE_OPTION_MATCH_FILENAME_BY_INSTALLNAME *photo;
+@property (strong, nonatomic) UIImage *photo;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *ingredients;
 @property (strong, nonatomic) NSString *instructions;
-@property (strong, nonatomic) NSString *protein;
-@property (strong, nonatomic) NSString *carbohydrate;
-@property (strong, nonatomic) NSString *vegfruit;
-@property (strong, nonatomic) NSString *dairy;
+@property (nonatomic) NSInteger protein;
+@property (nonatomic) NSInteger carbohydrate;
+@property (nonatomic) NSInteger vegfruit;
+@property (nonatomic) NSInteger dairy;
 //these are the properties that each meal share
 
 @end
