@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // need new method
     self.suggestion = [[Suggestions alloc] init];
     self.Suggestion1 = [[Module alloc] init];
     self.Suggestion2 = [[Module alloc] init];
