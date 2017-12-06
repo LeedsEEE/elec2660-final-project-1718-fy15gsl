@@ -11,17 +11,26 @@
 #import "Suggestions.h"
 
 @interface HomeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
-
+//Home View
 @property (weak, nonatomic) IBOutlet UIPickerView *proteinPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *carbPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *vegPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *dairyPicker;
 
+//1st view
+
+
+
 @property (strong, nonatomic) DataModel *data;
 @property (strong, nonatomic) Suggestions *suggestions;
+@property (strong, nonatomic) Module *Suggestion1;
+@property (strong, nonatomic) Module *Suggestion2;
+@property (strong, nonatomic) Module *Suggestion3;
+
 
 
 - (IBAction)goButton:(UIButton *)sender;
+
 
 
 @end

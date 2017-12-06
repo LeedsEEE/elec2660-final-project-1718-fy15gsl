@@ -73,7 +73,11 @@
         [self.mealsScores addObject: @(meal23Score)];
         [self.mealsScores addObject: @(meal24Score)];
         [self.mealsScores addObject: @(meal25Score)]; // index 24
-            
+        
+        self.suggestionsArray = [NSMutableArray array];
+        self.suggestion1 = [[Module alloc] init];
+        self.suggestion2 = [[Module alloc] init];
+        self.suggestion3 = [[Module alloc] init];
         
     }
     return self;
@@ -87,7 +91,7 @@
             mealScore += 3; // greater importance
         }
         if (self.selectedCarbohydrate == mealX.carbohydrate) {
-            mealScore += 2; //second greates
+            mealScore += 2; //second greatest
         }
         if (self.selectedVegFruit == mealX.vegfruit) {
             mealScore += 1;
@@ -96,14 +100,50 @@
             mealScore += 1;
         }
         
-        [self.mealsScores replaceObjectAtIndex:i withObject: @(mealScore)];
+        [self.mealsScores replaceObjectAtIndex:i withObject: [NSNumber numberWithInteger:(mealScore)]];
     }
     [self assignScore];
-    return self.mealsScores;
+    return self.suggestionsArray;
 }
 
-- (void) assignScore {
+- (NSMutableArray *) assignScore {
+    while (1 == 1) {
+        int check = 0;
+        for (int i = 0; i <= 23 ; i++) {
+            NSInteger numL = [[self.mealsScores objectAtIndex:(i)] integerValue];
+            NSInteger numR = [[self.mealsScores objectAtIndex:(i + 1)] integerValue];
+            Module *mealL = [[Module alloc] init];
+            Module *mealR = [[Module alloc] init];
+            if (numL < numR) {
+                [self.mealsScores replaceObjectAtIndex:(i) withObject:[NSNumber numberWithInteger:numR]];
+                [self.mealsScores replaceObjectAtIndex:(i+1) withObject:[NSNumber numberWithInteger:numL]];
+                mealL = [self.data.mealsArray objectAtIndex:(i)];
+                mealR = [self.data.mealsArray objectAtIndex:(i +1)];
+                [self.data.mealsArray replaceObjectAtIndex:(i) withObject:mealR];
+                [self.data.mealsArray replaceObjectAtIndex:(i+1) withObject:mealL];
+            }else {
+                check ++;
+            }
+        }
+        if (check == 24) {
+            break;
+        }
+    }
+    self.suggestion1 = [self.data.mealsArray objectAtIndex:(0)];
+    self.suggestion2 = [self.data.mealsArray objectAtIndex:(1)];
+    self.suggestion3 = [self.data.mealsArray objectAtIndex:(2)];
     
+    [self.suggestionsArray addObject:self.suggestion1];  // index 0
+    [self.suggestionsArray addObject:self.suggestion2];
+    [self.suggestionsArray addObject:self.suggestion3];  // index 2
+    
+    return self.suggestionsArray;
 }
+
+/*- (void) suggestionsTest: (id)object returnBlock:(void (^) (id returnSuggestion1, id returnSuggestion2, id returnSuggestion3))returnBlock{
+    
+}*/
+    
+
 
 @end

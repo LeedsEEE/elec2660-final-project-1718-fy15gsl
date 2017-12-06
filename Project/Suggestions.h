@@ -17,15 +17,17 @@
 @property NSInteger selectedVegFruit;
 @property NSInteger selectedDairy;
 
-@property NSObject *suggestion1;  // personal note: could use arrays as alternative
-@property NSObject *suggestion2;
-@property NSObject *suggestion3;
+@property Module *suggestion1;
+@property Module *suggestion2;
+@property Module *suggestion3;
 
 @property (strong, nonatomic) NSMutableArray *mealsScores;
+@property (strong, nonatomic) NSMutableArray *suggestionsArray;
 
 @property (strong, nonatomic) DataModel *data;
 
 - (NSMutableArray*) getSuggestions;
-- (void) assignScore;
+- (NSMutableArray*) assignScore; // change to ns array later
+// - (void) suggestionsTest;
 
 @end

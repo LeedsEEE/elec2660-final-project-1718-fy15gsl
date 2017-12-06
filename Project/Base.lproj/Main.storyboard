@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DxD-Z4-SNh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DxD-Z4-SNh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -57,28 +57,28 @@
                                     <segue destination="J0f-Cv-xBZ" kind="show" id="czw-yG-4xE"/>
                                 </connections>
                             </button>
-                            <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RiM-pA-RAo">
+                            <pickerView tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RiM-pA-RAo">
                                 <frame key="frameInset" minY="163" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="3GG-fT-kmk"/>
                                     <constraint firstAttribute="height" constant="91" id="BPx-O9-t2O"/>
                                 </constraints>
                             </pickerView>
-                            <pickerView tag="2" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eq-fU-5xE">
+                            <pickerView tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eq-fU-5xE">
                                 <frame key="frameInset" minY="282" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="7hN-Sg-Oiz"/>
                                     <constraint firstAttribute="height" constant="90" id="djv-yV-4MS"/>
                                 </constraints>
                             </pickerView>
-                            <pickerView tag="3" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jej-SR-dge">
+                            <pickerView tag="3" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jej-SR-dge">
                                 <frame key="frameInset" minY="398" height="99"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="99" id="0hP-Kz-Jhp"/>
                                     <constraint firstAttribute="width" constant="375" id="cMw-bp-4oH"/>
                                 </constraints>
                             </pickerView>
-                            <pickerView tag="4" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-NQ-MqO">
+                            <pickerView tag="4" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-NQ-MqO">
                                 <frame key="frameInset" minY="516" height="97"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="1q2-Zd-bvH"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="216.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="NDK-nd-lAC">
             <objects>
-                <viewController id="J0f-Cv-xBZ" sceneMemberID="viewController">
+                <viewController id="J0f-Cv-xBZ" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3eT-CG-q8W"/>
                         <viewControllerLayoutGuide type="bottom" id="5vp-u1-yPb"/>
@@ -137,12 +137,14 @@
                                 </constraints>
                                 <state key="normal" title="Show Details"/>
                                 <connections>
+                                    <action selector="suggestion1Details:" destination="J0f-Cv-xBZ" eventType="touchUpInside" id="jrh-al-Tg6"/>
                                     <segue destination="ELZ-mA-10C" kind="show" id="qaU-ne-OLY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuE-XL-dR0">
                                 <state key="normal" title="Show Details"/>
                                 <connections>
+                                    <action selector="suggestion2Details:" destination="J0f-Cv-xBZ" eventType="touchUpInside" id="O6K-Rc-c7Y"/>
                                     <segue destination="ELZ-mA-10C" kind="show" id="6dT-LD-nTH"/>
                                 </connections>
                             </button>
@@ -181,6 +183,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-Ei-Wb8">
                                 <state key="normal" title="Show Details "/>
                                 <connections>
+                                    <action selector="suggestion3Details:" destination="J0f-Cv-xBZ" eventType="touchUpInside" id="8jT-re-fFy"/>
                                     <segue destination="ELZ-mA-10C" kind="show" id="TlW-Rg-7ca"/>
                                 </connections>
                             </button>
@@ -217,6 +220,11 @@
                             <constraint firstItem="5vp-u1-yPb" firstAttribute="top" secondItem="abo-Zo-JB6" secondAttribute="bottom" constant="8" id="sWN-e3-kgm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="suggestion1Title" destination="hLU-o8-Ndj" id="Ngd-Je-TAW"/>
+                        <outlet property="suggestion2Title" destination="0IE-kS-zzt" id="60d-hN-EHD"/>
+                        <outlet property="suggestion3Title" destination="Du9-Bg-dfy" id="Tk4-wo-ph3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYT-lV-M8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

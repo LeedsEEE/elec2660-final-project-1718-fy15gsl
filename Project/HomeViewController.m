@@ -19,6 +19,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.data = [[DataModel alloc] init];
     self.suggestions = [[Suggestions alloc] init];
+    self.Suggestion1 = [[Module alloc] init];
+    self.Suggestion2 = [[Module alloc] init];
+    self.Suggestion3 = [[Module alloc] init];
     
     NSLog(@" mealsScoresArray = %@", self.suggestions.mealsScores); // to check the values inside the array and that the class works
     
@@ -44,7 +47,23 @@
 
 - (IBAction)goButton:(UIButton *)sender {
     [self.suggestions getSuggestions];
-    NSLog(@"Array= %@", self.suggestions.mealsScores);
+    //NSLog(@"Array= %@", self.suggestions.mealsScores);
+    self.Suggestion1 = [self.suggestions.suggestionsArray objectAtIndex:(0)];
+    self.Suggestion2 = [self.suggestions.suggestionsArray objectAtIndex:(1)];
+    self.Suggestion3 = [self.suggestions.suggestionsArray objectAtIndex:(2)];
+    /*self.suggestion1Title.text = @"mierda funciona";
+    self.suggestion2Title.text = self.Suggestion2.title;
+    self.suggestion3Title.text = self.Suggestion3.title;*/
+    NSLog(@"Suggestion 1: %@", self.Suggestion1.title);
+}
+
+- (IBAction)suggestion1Details:(UIButton *)sender {
+}
+
+- (IBAction)suggestion2Details:(UIButton *)sender {
+}
+
+- (IBAction)suggestion3Details:(UIButton *)sender {
 }
 #pragma mark Picker View Delegate Methods
 - (NSString *)pickerView:(UIPickerView *)pickerView
