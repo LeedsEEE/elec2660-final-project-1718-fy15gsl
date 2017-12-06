@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="216.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Home View Controller-->
+        <!--View Controller1-->
         <scene sceneID="NDK-nd-lAC">
             <objects>
-                <viewController id="J0f-Cv-xBZ" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="J0f-Cv-xBZ" customClass="ViewController1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3eT-CG-q8W"/>
                         <viewControllerLayoutGuide type="bottom" id="5vp-u1-yPb"/>
@@ -137,14 +137,12 @@
                                 </constraints>
                                 <state key="normal" title="Show Details"/>
                                 <connections>
-                                    <action selector="suggestion1Details:" destination="J0f-Cv-xBZ" eventType="touchUpInside" id="jrh-al-Tg6"/>
                                     <segue destination="ELZ-mA-10C" kind="show" id="qaU-ne-OLY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuE-XL-dR0">
                                 <state key="normal" title="Show Details"/>
                                 <connections>
-                                    <action selector="suggestion2Details:" destination="J0f-Cv-xBZ" eventType="touchUpInside" id="O6K-Rc-c7Y"/>
                                     <segue destination="ELZ-mA-10C" kind="show" id="6dT-LD-nTH"/>
                                 </connections>
                             </button>
@@ -183,7 +181,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3Z-Ei-Wb8">
                                 <state key="normal" title="Show Details "/>
                                 <connections>
-                                    <action selector="suggestion3Details:" destination="J0f-Cv-xBZ" eventType="touchUpInside" id="8jT-re-fFy"/>
                                     <segue destination="ELZ-mA-10C" kind="show" id="TlW-Rg-7ca"/>
                                 </connections>
                             </button>
@@ -221,9 +218,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="suggestion1Title" destination="hLU-o8-Ndj" id="Ngd-Je-TAW"/>
-                        <outlet property="suggestion2Title" destination="0IE-kS-zzt" id="60d-hN-EHD"/>
-                        <outlet property="suggestion3Title" destination="Du9-Bg-dfy" id="Tk4-wo-ph3"/>
+                        <outlet property="suggestion1Title" destination="hLU-o8-Ndj" id="TGq-12-g4G"/>
+                        <outlet property="suggestion2Title" destination="0IE-kS-zzt" id="25l-Jq-M4c"/>
+                        <outlet property="suggestion3Title" destination="Du9-Bg-dfy" id="lp5-RN-LPH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYT-lV-M8L" userLabel="First Responder" sceneMemberID="firstResponder"/>

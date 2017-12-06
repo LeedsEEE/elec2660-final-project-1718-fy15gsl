@@ -17,9 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *vegPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *dairyPicker;
 
-//1st view
-
-
 
 @property (strong, nonatomic) DataModel *data;
 @property (strong, nonatomic) Suggestions *suggestions;
