@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DataModel.h"
 #import "Suggestions.h"
+#import "ViewController1.h"
+
 
 @interface HomeViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 //Home View

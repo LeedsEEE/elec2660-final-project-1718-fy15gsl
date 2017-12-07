@@ -143,5 +143,20 @@
 /*- (void) getSuggestions:(NSInteger*)buffer range:(NSRange)inRange {
     
 }*/
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"GetSuggestions"]){
+        ViewController1 *destination = [segue destinationViewController];
+        Module *tempSuggestion1 = self.Suggestion1;
+        Module *tempSuggestion2 = self.Suggestion2;
+        Module *tempSuggestion3 = self.Suggestion3;
+        destination.suggestionModule1 = tempSuggestion1;
+        destination.suggestionModule2 = tempSuggestion2;
+        destination.suggestionModule3 = tempSuggestion3;
+        
+    }
+}
+
 
 @end
