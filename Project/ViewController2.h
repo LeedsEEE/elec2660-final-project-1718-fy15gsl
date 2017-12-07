@@ -12,6 +12,7 @@
 @interface ViewController2 : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *chosenMealIngredients;
 @property (weak, nonatomic) IBOutlet UILabel *chosenMealInstructions;
+@property (weak, nonatomic) IBOutlet UIImageView *chosenMealPhoto;
 
 @property (strong, nonatomic) Module *chosenSuggestion;
 

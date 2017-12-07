@@ -350,6 +350,7 @@
                     <connections>
                         <outlet property="chosenMealIngredients" destination="4gG-7Q-cp9" id="CXD-Qk-XFC"/>
                         <outlet property="chosenMealInstructions" destination="gYz-Vu-Tgc" id="XCs-Iu-oq9"/>
+                        <outlet property="chosenMealPhoto" destination="RoR-LO-Cxk" id="QuA-Iv-ORr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R67-Xd-J16" userLabel="First Responder" sceneMemberID="firstResponder"/>

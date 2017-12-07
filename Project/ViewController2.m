@@ -21,6 +21,10 @@
     
     self.chosenMealIngredients.text = self.chosenSuggestion.ingredients;
     self.chosenMealInstructions.text = self.chosenSuggestion.instructions;
+    
+    self.chosenMealPhoto.image = self.chosenSuggestion.photo;
+    
+    
     //self.chosenMealInstructions.numberOfLines = 0;
     //self.chosenMealInstructions.lineBreakMode = NSLineBreakByWordWrapping;
     /*NSString *text = self.chosenSuggestion.instructions;
