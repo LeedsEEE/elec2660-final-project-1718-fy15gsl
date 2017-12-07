@@ -286,7 +286,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RoR-LO-Cxk">
-                                <frame key="frameInset" minX="8" minY="64" width="359" height="217"/>
+                                <frame key="frameInset" minX="9" minY="64" width="359" height="217"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="217" id="rC6-Lg-7qn"/>
                                 </constraints>
@@ -314,8 +314,8 @@
                                             <constraint firstItem="IUH-6x-2ec" firstAttribute="centerX" secondItem="zpc-31-Bbo" secondAttribute="centerX" id="4DN-vF-vQN"/>
                                             <constraint firstItem="4gG-7Q-cp9" firstAttribute="centerX" secondItem="zpc-31-Bbo" secondAttribute="centerX" id="DEI-e8-Pvz"/>
                                             <constraint firstItem="4gG-7Q-cp9" firstAttribute="top" secondItem="zpc-31-Bbo" secondAttribute="top" constant="8" id="Gez-IS-eis"/>
-                                            <constraint firstAttribute="bottom" secondItem="IUH-6x-2ec" secondAttribute="bottom" constant="500" id="fCo-bt-UWv"/>
-                                            <constraint firstItem="IUH-6x-2ec" firstAttribute="top" secondItem="4gG-7Q-cp9" secondAttribute="bottom" constant="700" id="pCc-aq-fTd"/>
+                                            <constraint firstAttribute="bottom" secondItem="IUH-6x-2ec" secondAttribute="bottom" constant="100" id="fCo-bt-UWv"/>
+                                            <constraint firstItem="IUH-6x-2ec" firstAttribute="top" secondItem="4gG-7Q-cp9" secondAttribute="bottom" constant="400" id="pCc-aq-fTd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
