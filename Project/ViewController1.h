@@ -10,6 +10,7 @@
 #import "DataModel.h"
 #import "Suggestions.h"
 #import "Module.h"
+#import "ViewController2.h"
 
 
 @interface ViewController1 : UIViewController
@@ -17,6 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *suggestion1Title;
 @property (weak, nonatomic) IBOutlet UILabel *suggestion2Title;
 @property (weak, nonatomic) IBOutlet UILabel *suggestion3Title;
+
+@property (weak, nonatomic) IBOutlet UIImageView *suggestion1Photo;
+@property (weak, nonatomic) IBOutlet UIImageView *suggestion2Photo;
+@property (weak, nonatomic) IBOutlet UIImageView *suggestion3Photo;
+
 
 @property (strong, nonatomic) Suggestions *suggestion;
 @property (strong, nonatomic) Module *suggestionModule1;

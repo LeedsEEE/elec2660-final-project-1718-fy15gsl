@@ -32,6 +32,10 @@
     self.suggestion1Title.text = self.suggestionModule1.title;
     self.suggestion2Title.text = self.suggestionModule2.title;
     self.suggestion3Title.text = self.suggestionModule3.title;
+    
+    self.suggestion1Photo.image = self.suggestionModule1.photo;
+    self.suggestion2Photo.image = self.suggestionModule2.photo;
+    self.suggestion3Photo.image = self.suggestionModule3.photo;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,14 +43,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"Suggestion1"]) {
+        ViewController2 *destination = [segue destinationViewController];
+        Module *tempModule = self.suggestionModule1;
+        destination.chosenSuggestion = tempModule;
+        
+    }else if ([[segue identifier] isEqualToString:@"Suggestion2"]){
+        ViewController2 *destination = [segue destinationViewController];
+        Module *tempModule = self.suggestionModule2;
+        destination.chosenSuggestion = tempModule;
+        
+    }else if ([[segue identifier] isEqualToString:@"Suggestion3"]){
+        ViewController2 *destination = [segue destinationViewController];
+        Module *tempModule = self.suggestionModule3;
+        destination.chosenSuggestion = tempModule;
+        
+    }
+    
 }
-*/
+
 
 @end
