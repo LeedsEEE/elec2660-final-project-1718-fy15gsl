@@ -18,12 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.data = [[DataModel alloc] init];
-    self.suggestions = [[Suggestions alloc] init];
+    /*self.suggestions = [[Suggestions alloc] init];
     self.Suggestion1 = [[Module alloc] init];
     self.Suggestion2 = [[Module alloc] init];
-    self.Suggestion3 = [[Module alloc] init];
+    self.Suggestion3 = [[Module alloc] init];*/
     
-    NSLog(@" mealsScoresArray = %@", self.suggestions.mealsScores); // to check the values inside the array and that the class works
+    //NSLog(@" mealsScoresArray = %@", self.suggestions.mealsScores); // to check the values inside the array and that the class works
     
     self.proteinPicker.delegate = self;
     self.proteinPicker.dataSource = self;
@@ -45,26 +45,16 @@
 }
 
 
-- (IBAction)goButton:(UIButton *)sender {
+/*- (IBAction)goButton:(UIButton *)sender {
     [self.suggestions getSuggestions];
     //NSLog(@"Array= %@", self.suggestions.mealsScores);
     self.Suggestion1 = [self.suggestions.suggestionsArray objectAtIndex:(0)];
     self.Suggestion2 = [self.suggestions.suggestionsArray objectAtIndex:(1)];
     self.Suggestion3 = [self.suggestions.suggestionsArray objectAtIndex:(2)];
-    /*self.suggestion1Title.text = @"mierda funciona";
-    self.suggestion2Title.text = self.Suggestion2.title;
-    self.suggestion3Title.text = self.Suggestion3.title;*/
     NSLog(@"Suggestion 1: %@", self.Suggestion1.title);
 }
+*/
 
-- (IBAction)suggestion1Details:(UIButton *)sender {
-}
-
-- (IBAction)suggestion2Details:(UIButton *)sender {
-}
-
-- (IBAction)suggestion3Details:(UIButton *)sender {
-}
 #pragma mark Picker View Delegate Methods
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
@@ -89,32 +79,56 @@
 - (void)pickerView:(UIPickerView *)pickerView
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component{
-    NSInteger selectedProteinRow = [self.proteinPicker selectedRowInComponent:0];
-    self.suggestions.selectedProtein = selectedProteinRow +1;
-    NSLog(@"protein selection: %@", [self.data.meatOptionsArray objectAtIndex:selectedProteinRow]); // to check that the correct selection is stored in the variable
+    self.selectedProteinRow = [self.proteinPicker selectedRowInComponent:0];
+    //self.suggestions.selectedProtein = selectedProteinRow +1;
+    //NSLog(@"protein selection: %@", [self.data.meatOptionsArray objectAtIndex:self.selectedProteinRow]); // to check that the correct selection is stored in the variable
     
     
-    NSInteger selectedCarbRow = [self.carbPicker selectedRowInComponent:0]; // to set the carb selection
-    self.suggestions.selectedCarbohydrate = selectedCarbRow +1;
-    NSLog(@"carb selection: %@", [self.data.carbOptionsArray objectAtIndex:selectedCarbRow]);
-    NSLog(@"carb num: %ld", self.suggestions.selectedCarbohydrate);
+    self.selectedCarbRow = [self.carbPicker selectedRowInComponent:0]; // to set the carb selection
+    //self.suggestions.selectedCarbohydrate = selectedCarbRow +1;
+    //NSLog(@"carb selection: %@", [self.data.carbOptionsArray objectAtIndex:self.selectedCarbRow]);
+   // NSLog(@"carb num: %ld", self.suggestions.selectedCarbohydrate);
     
     
-    NSInteger selectedVegRow = [self.vegPicker selectedRowInComponent:0]; //sets the Veg selection
-    self.suggestions.selectedVegFruit = selectedVegRow +1;
-    NSLog(@"veg and fruit selection: %@", [self.data.vegfruitOptionsArray objectAtIndex:selectedVegRow]);
-    NSLog(@"veg num: %ld", self.suggestions.selectedVegFruit);
+    self.selectedVegRow = [self.vegPicker selectedRowInComponent:0]; //sets the Veg selection
+    //self.suggestions.selectedVegFruit = selectedVegRow +1;
+    //NSLog(@"veg and fruit selection: %@", [self.data.vegfruitOptionsArray objectAtIndex:self.selectedVegRow]);
+    //NSLog(@"veg num: %ld", self.suggestions.selectedVegFruit);
     
     
-    NSInteger selectedDairyRow = [self.dairyPicker selectedRowInComponent:0]; //sets the dairy selection
-    self.suggestions.selectedDairy = selectedDairyRow +1;
-    NSLog(@"dairy selection: %@", [self.data.dairyOptionsArray objectAtIndex:selectedDairyRow]);
-    NSLog(@"dairy num: %ld", self.suggestions.selectedDairy);
+    self.selectedDairyRow = [self.dairyPicker selectedRowInComponent:0]; //sets the dairy selection
+    //self.suggestions.selectedDairy = selectedDairyRow +1;
+   // NSLog(@"dairy selection: %@", [self.data.dairyOptionsArray objectAtIndex:self.selectedDairyRow]);
+    //NSLog(@"dairy num: %ld", self.suggestions.selectedDairy);
     
-    NSLog(@" mealsScoresArray = %@", self.suggestions.mealsScores);
+    //NSLog(@" mealsScoresArray = %@", self.suggestions.mealsScores);
+    /*[self.suggestions getSuggestions];
+    //NSLog(@"Array= %@", self.suggestions.mealsScores);
+    self.Suggestion1 = [self.suggestions.suggestionsArray objectAtIndex:(0)];
+    self.Suggestion2 = [self.suggestions.suggestionsArray objectAtIndex:(1)];
+    self.Suggestion3 = [self.suggestions.suggestionsArray objectAtIndex:(2)];*/
     
     
 }
+- (IBAction)goButton:(UIButton *)sender {
+    self.suggestions = [[Suggestions alloc] init];
+    self.Suggestion1 = [[Module alloc] init];
+    self.Suggestion2 = [[Module alloc] init];
+    self.Suggestion3 = [[Module alloc] init];
+    
+    self.suggestions.selectedProtein = self.selectedProteinRow +1;
+    self.suggestions.selectedCarbohydrate = self.selectedCarbRow +1;
+    self.suggestions.selectedVegFruit = self.selectedVegRow +1;
+    self.suggestions.selectedDairy = self.selectedDairyRow +1;
+
+    [self.suggestions getSuggestions];
+    //NSLog(@"Array= %@", self.suggestions.mealsScores);
+    self.Suggestion1 = [self.suggestions.suggestionsArray objectAtIndex:(0)];
+    self.Suggestion2 = [self.suggestions.suggestionsArray objectAtIndex:(1)];
+    self.Suggestion3 = [self.suggestions.suggestionsArray objectAtIndex:(2)];
+    NSLog(@"Suggestion 1: %@", self.Suggestion1.title);
+}
+
 #pragma mark Pricker View Data Source Methods
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;

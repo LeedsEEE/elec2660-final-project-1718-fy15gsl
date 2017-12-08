@@ -26,6 +26,11 @@
 @property (strong, nonatomic) Module *Suggestion2;
 @property (strong, nonatomic) Module *Suggestion3;
 
+@property NSInteger selectedProteinRow;
+@property NSInteger selectedCarbRow;
+@property NSInteger selectedVegRow;
+@property NSInteger selectedDairyRow;
+
 //y
 
 - (IBAction)goButton:(UIButton *)sender;

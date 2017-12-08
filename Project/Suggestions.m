@@ -42,11 +42,7 @@
         NSInteger meal23Score= 0;
         NSInteger meal24Score= 0;
         NSInteger meal25Score= 0 ;
-        /*self.mealsScores = [NSArray arrayWithObjects: @(meal1Score), // index 0
-                            @(meal2Score), // index 1
-                            @(meal3Score), //index 2
-                            @(meal4Score), //index 3
-                            nil];*/
+
         self.mealsScores = [NSMutableArray array];
         [self.mealsScores addObject: @(meal1Score)]; //index 0
         [self.mealsScores addObject: @(meal2Score)];
@@ -73,7 +69,7 @@
         [self.mealsScores addObject: @(meal23Score)];
         [self.mealsScores addObject: @(meal24Score)];
         [self.mealsScores addObject: @(meal25Score)]; // index 24
-        
+
         self.suggestionsArray = [NSMutableArray array];
         self.suggestion1 = [[Module alloc] init];
         self.suggestion2 = [[Module alloc] init];
@@ -83,9 +79,11 @@
     return self;
 }
 - (NSMutableArray *) getSuggestions { // this assings a score to each meal based on the selected ingredients and then insert them to the mealsScores array
+    [self scoreInit];
+    [self mealsInitialPosition];
     for (int i = 0; i <= 24 ; i++) {
         Module *mealX = [[Module alloc] init];
-        mealX = [self.data.mealsArray objectAtIndex:(i)];
+        mealX = [self.tempMealArray objectAtIndex:(i)];
         int mealScore = 0;
         if (self.selectedProtein == mealX.protein){
             mealScore += 3; // greater importance
@@ -106,7 +104,7 @@
     return self.suggestionsArray;
 }
 
-- (NSMutableArray *) assignScore {
+- (NSMutableArray *) assignScore {  //this arranges the meals by their score from highest to lowest
     while (1 == 1) {
         int check = 0;
         for (int i = 0; i <= 23 ; i++) {
@@ -117,10 +115,10 @@
             if (numL < numR) {
                 [self.mealsScores replaceObjectAtIndex:(i) withObject:[NSNumber numberWithInteger:numR]];
                 [self.mealsScores replaceObjectAtIndex:(i+1) withObject:[NSNumber numberWithInteger:numL]];
-                mealL = [self.data.mealsArray objectAtIndex:(i)];
-                mealR = [self.data.mealsArray objectAtIndex:(i +1)];
-                [self.data.mealsArray replaceObjectAtIndex:(i) withObject:mealR];
-                [self.data.mealsArray replaceObjectAtIndex:(i+1) withObject:mealL];
+                mealL = [self.tempMealArray objectAtIndex:(i)];
+                mealR = [self.tempMealArray objectAtIndex:(i +1)];
+                [self.tempMealArray replaceObjectAtIndex:(i) withObject:mealR];
+                [self.tempMealArray replaceObjectAtIndex:(i+1) withObject:mealL];
             }else {
                 check ++;
             }
@@ -129,9 +127,9 @@
             break;
         }
     }
-    self.suggestion1 = [self.data.mealsArray objectAtIndex:(0)];
-    self.suggestion2 = [self.data.mealsArray objectAtIndex:(1)];
-    self.suggestion3 = [self.data.mealsArray objectAtIndex:(2)];
+    self.suggestion1 = [self.tempMealArray objectAtIndex:(0)];
+    self.suggestion2 = [self.tempMealArray objectAtIndex:(1)];
+    self.suggestion3 = [self.tempMealArray objectAtIndex:(2)];
     
     [self.suggestionsArray addObject:self.suggestion1];  // index 0
     [self.suggestionsArray addObject:self.suggestion2];
@@ -140,10 +138,50 @@
     return self.suggestionsArray;
 }
 
+- (NSMutableArray *) mealsInitialPosition { // to arrange the meals without changing the DataModel
+    self.tempMealArray = [[NSMutableArray alloc] init];
+    [self.tempMealArray addObject:@(0)]; // index 0
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)]; // index 10
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)]; // index 20
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)];
+    [self.tempMealArray addObject:@(0)]; // index 24
+    for (int i = 0; i <=24 ; i++) {
+        Module *mealX = [self.data.mealsArray objectAtIndex:(i)];
+        [self.tempMealArray replaceObjectAtIndex:(i) withObject:(mealX)];
+    }
+    return self.tempMealArray;
+}
+
+- (NSMutableArray *) scoreInit { // to make sure each time the process is reapeated the exact same way
+    for (int i=0; i <=24 ; i++) {
+        [self.mealsScores replaceObjectAtIndex:(i) withObject:@(0)];
+    }
+    return self.mealsScores;
+}
 /*- (void) suggestionsTest: (id)object returnBlock:(void (^) (id returnSuggestion1, id returnSuggestion2, id returnSuggestion3))returnBlock{
-    
+ 
 }*/
-    
+
 
 
 @end

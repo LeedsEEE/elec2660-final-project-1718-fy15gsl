@@ -23,11 +23,14 @@
 
 @property (strong, nonatomic) NSMutableArray *mealsScores;
 @property (strong, nonatomic) NSMutableArray *suggestionsArray;
+@property (strong, nonatomic) NSMutableArray *tempMealArray;
+
 
 @property (strong, nonatomic) DataModel *data;
 
 - (NSMutableArray*) getSuggestions;
 - (NSMutableArray*) assignScore; // change to ns array later
-// - (void) suggestionsTest;
+- (NSMutableArray*) mealsInitialPosition;
+- (NSMutableArray*) scoreInit; 
 
 @end
