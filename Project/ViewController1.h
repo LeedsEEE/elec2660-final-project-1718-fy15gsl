@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *suggestion2Photo;
 @property (weak, nonatomic) IBOutlet UIImageView *suggestion3Photo;
 
+@property (weak, nonatomic) IBOutlet UILabel *chooseOne;
 
 @property (strong, nonatomic) Suggestions *suggestion;
 @property (strong, nonatomic) Module *suggestionModule1;

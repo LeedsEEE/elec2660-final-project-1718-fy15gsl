@@ -34,8 +34,23 @@
     self.suggestion3Title.text = self.suggestionModule3.title;
     
     self.suggestion1Photo.image = self.suggestionModule1.photo;
+    self.suggestion1Photo.layer.borderWidth = 3.0f;
+    self.suggestion1Photo.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.suggestion1Photo.layer.cornerRadius = 8.0f;
+    
     self.suggestion2Photo.image = self.suggestionModule2.photo;
+    self.suggestion2Photo.layer.borderWidth = 3.0f;
+    self.suggestion2Photo.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.suggestion2Photo.layer.cornerRadius = 8.0f;
+    
     self.suggestion3Photo.image = self.suggestionModule3.photo;
+    self.suggestion3Photo.layer.borderWidth = 3.0f;
+    self.suggestion3Photo.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.suggestion3Photo.layer.cornerRadius = 8.0f;
+    
+    self.chooseOne.layer.borderWidth = 4.0f;
+    self.chooseOne.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.chooseOne.layer.cornerRadius = 12.0f;
 }
 
 - (void)didReceiveMemoryWarning {

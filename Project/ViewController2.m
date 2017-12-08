@@ -23,6 +23,9 @@
     self.chosenMealInstructions.text = self.chosenSuggestion.instructions;
     
     self.chosenMealPhoto.image = self.chosenSuggestion.photo;
+    self.chosenMealPhoto.layer.borderWidth = 4.0f;
+    self.chosenMealPhoto.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.chosenMealPhoto.layer.cornerRadius = 9.0f;
     
     
     //self.chosenMealInstructions.numberOfLines = 0;

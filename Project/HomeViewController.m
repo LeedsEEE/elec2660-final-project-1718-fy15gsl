@@ -36,6 +36,10 @@
     
     self.dairyPicker.delegate = self;
     self.dairyPicker.dataSource = self;
+    
+    self.button.layer.borderWidth = 3.0f;
+    self.button.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.button.layer.cornerRadius = 14.0f;
 }
 
 

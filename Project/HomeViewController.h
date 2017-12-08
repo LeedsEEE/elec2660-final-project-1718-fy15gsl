@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *carbPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *vegPicker;
 @property (weak, nonatomic) IBOutlet UIPickerView *dairyPicker;
+@property (weak, nonatomic) IBOutlet UIButton *button;
 
 
 @property (strong, nonatomic) DataModel *data;
